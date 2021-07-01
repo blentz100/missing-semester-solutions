@@ -16,7 +16,7 @@ The motivation behind the course is to teach some of the tools you might be expe
    tutorial like [Learn Git Branching](https://learngitbranching.js.org/). As
    you're working through it, relate Git commands to the data model.
    
-    **Solution:** In progress
+    **Solution:** In progress. Working through the Learn Git Branching interactive demo. So far so good. 
     
 1. Clone the [repository for the
 class website](https://github.com/missing-semester/missing-semester).
