@@ -15,8 +15,27 @@ The motivation behind the course is to teach some of the tools you might be expe
    couple chapters of [Pro Git](https://git-scm.com/book/en/v2) or go through a
    tutorial like [Learn Git Branching](https://learngitbranching.js.org/). As
    you're working through it, relate Git commands to the data model.
+   Use git cherry-pick if you want to pick one of more commits from another branch and add those to the branch you are currently working on.
    
-    **Solution:** In progress. Working through the Learn Git Branching interactive demo. So far so good. 
+   
+    **Solution:** In progress. 
+    ### Learn Git Branching Tutorial
+    #### Introduction Sequence
+    Done
+    #### Ramping Up
+    Done
+    #### Moving Work Around
+    git revert undoes a commit by creating a new commit
+    
+    git reset actually alters the commit history. 
+    
+    Use git reset on a local repo, use git revert on a public repo
+    
+    Done
+    
+    #### A Mixed Bag
+    
+   
     
 1. Clone the [repository for the
 class website](https://github.com/missing-semester/missing-semester).
