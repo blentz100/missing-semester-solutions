@@ -1,5 +1,7 @@
 # missing-semester-solutions
-These are my solutions to the [MIT Missing Semester Course](https://missing.csail.mit.edu/). This course was offerred at MIT in January of 2020 and January of 2019 by [Anish Athalye](https://www.anishathalye.com/), [Jon Gjengset](https://thesquareplanet.com/), and [Jose Javier Gonzalez Ortiz](https://josejg.com/). The lectures, videos, and problems are all available at [https://missing.csail.mit.edu/](https://missing.csail.mit.edu/) The course consists of 10 lectures and covers the topics listed below. 
+These are my solutions to the [MIT Missing Semester Course](https://missing.csail.mit.edu/). This course was offerred at MIT in January of 2020 and January of 2019 by [Anish Athalye](https://www.anishathalye.com/), [Jon Gjengset](https://thesquareplanet.com/), and [Jose Javier Gonzalez Ortiz](https://josejg.com/). The lectures, videos, and problems are all available at [https://missing.csail.mit.edu/](https://missing.csail.mit.edu/). 
+
+The course consists of 10 lectures and covers the topics listed below. 
 
 The motivation behind the course is to teach some of the tools you might be expected to know when pursuing a computer science degree, but there is no formal course that teaches them. Since this course was released to the public, many others have forked it and taught their own version of it. 
 
@@ -15,7 +17,7 @@ The motivation behind the course is to teach some of the tools you might be expe
    couple chapters of [Pro Git](https://git-scm.com/book/en/v2) or go through a
    tutorial like [Learn Git Branching](https://learngitbranching.js.org/). As
    you're working through it, relate Git commands to the data model.
-   Use git cherry-pick if you want to pick one of more commits from another branch and add those to the branch you are currently working on.
+  
    
    
     **Solution:** In progress. 
@@ -31,9 +33,31 @@ The motivation behind the course is to teach some of the tools you might be expe
     
     Use git reset on a local repo, use git revert on a public repo
     
+    git rebase -i will let you reorder the sequence of commits
+    
+    Use git cherry-pick if you want to pick one of more commits from another branch and add those to the branch you are currently working on.
+    
     Done
     
     #### A Mixed Bag
+    Part 1. Done
+    
+    Part 2. 
+    
+    //We need to change newImage even though that commit is way back in history
+    
+    git rebase -i //reorder so the commit we want is on top
+    
+    git checkout ...
+    
+    git commit --amend //make the change we want
+    
+    git checkout ...
+    
+    git rebase -i //reorder back to the original order
+    
+    //move main to this updated part of the tree
+    
     
    
     
