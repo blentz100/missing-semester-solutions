@@ -40,23 +40,39 @@ The motivation behind the course is to teach some of the tools you might be expe
     Done
     
     #### A Mixed Bag
-    Part 1. Done
+    1 - Grabbing Just 1 Commit
     
-    Part 2. 
+    Done.
+    
+    2 - Juggling Commits
     
     //We need to change newImage even though that commit is way back in history
     
-    git rebase -i //reorder so the commit we want is on top
+    git rebase -i C1 //reorder so the commit we want is on top
     
-    git checkout ...
+    git checkout newImage //get setup to make the change to newImage
     
-    git commit --amend //make the change we want
+    git commit --amend //make the change to newImage
     
-    git checkout ...
+    git checkout caption...
     
-    git rebase -i //reorder back to the original order
+    git rebase -i C1 //reorder back to the original order
     
-    //move main to this updated part of the tree
+    git branch -f main HEAD~3 //move main to this updated part of the tree with the force -f flag
+    
+    Done.
+    
+    3 - Juggling Commits #2
+    
+    4 - Git Tags
+    
+    5 - Git Describe
+    
+    
+     
+    In progress.
+    
+    
     
     
    
