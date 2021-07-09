@@ -64,6 +64,11 @@ The motivation behind the course is to teach some of the tools you might be expe
     
     3 - Juggling Commits #2
     
+    git cherry-pick will plop down a commit from anywhere in the tree onto HEAD
+    
+    My first attempt solved this in 14 commands. Shortest is 4. Need some practice on this one. 
+ 
+    
     4 - Git Tags
     
     5 - Git Describe
