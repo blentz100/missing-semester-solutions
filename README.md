@@ -27,6 +27,9 @@ The motivation behind the course is to teach some of the tools you might be expe
     #### Ramping Up
     Done
     #### Moving Work Around
+    
+    Use git cherry-pick if you want to pick one of more commits from another branch and add those to the branch you are currently working on.
+    
     git revert undoes a commit by creating a new commit
     
     git reset actually alters the commit history. 
@@ -35,12 +38,26 @@ The motivation behind the course is to teach some of the tools you might be expe
     
     git rebase -i will let you reorder the sequence of commits
     
-    Use git cherry-pick if you want to pick one of more commits from another branch and add those to the branch you are currently working on.
+    
     
     Done
     
     #### A Mixed Bag
     1 - Grabbing Just 1 Commit
+    
+    Use ```git rebase -i``` or ```git cherry-pick``` to move a bugFix commit back into the main branch. 
+    
+    One solution for this challenge is:
+    
+    ```console
+    git checkout main
+    
+    git cherry-pick bugFix
+    ```
+    
+    Another solution is:
+    ```console
+    ```
     
     Done.
     
