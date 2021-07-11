@@ -19,10 +19,21 @@ The motivation behind the course is to teach some of the tools you might be expe
    you're working through it, relate Git commands to the data model.
   
    
-   
-    **Solution:** In progress. 
-    ### Learn Git Branching Tutorial
-    #### Introduction Sequence
+      ### Learn Git Branching Tutorial
+      #### Introduction Sequence
+    
+      1. Introduction to Git Commits. 
+    
+         Git commits are lightweight snapshots of a project you are working on, and switching between them is fast. 
+    
+         Each time we do a ```git commit``` we create a new snapshot that is tied to a parent commit. 
+    
+      2. Branching in Git. 
+    
+    
+    
+    
+    
     Done
     #### Ramping Up
     Done
@@ -45,21 +56,21 @@ The motivation behind the course is to teach some of the tools you might be expe
     #### A Mixed Bag
     1 - Grabbing Just 1 Commit
     
-    Use ```git rebase -i``` or ```git cherry-pick``` to move a bugFix commit back into the main branch. 
+    Let's say you are debugging a problem, you go back and add some print debug statements and print statements. Each one of those has their own commit now. Now you solve the problem and you just want your bugFix commit back into the main branch without bringing along your debug commits. That's the use case for this problem. Two potential solutions are suggested: ```git rebase -i``` or ```git cherry-pick```. 
     
-    One solution for this challenge is:
+    Solution using cherry-pick
     
     ```console
     git checkout main
-    
     git cherry-pick bugFix
     ```
     
-    Another solution is:
+    Solution using git rebase -i 
     ```console
+    git rebase -i c1 // delete commits c2 and c3
+    git branch -f c4 main'
     ```
-    
-    Done.
+ 
     
     2 - Juggling Commits
     
