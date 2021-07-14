@@ -20,92 +20,101 @@ The motivation behind the course is to teach some of the tools you might be expe
   
    
       ### Learn Git Branching Tutorial
-      #### Introduction Sequence
+      #### Introduction Sequence - A nicely paced introduction to the majority of git commands
     
-      1. Introduction to Git Commits. 
+      1. Introduction to Git Commits
     
-         Git commits are lightweight snapshots of a project you are working on, and switching between them is fast. 
+            Git commits are lightweight snapshots of a project you are working on, and switching between them is fast. 
+
+            Each time we do a ```git commit``` we create a new snapshot that is tied to a parent commit. 
     
-         Each time we do a ```git commit``` we create a new snapshot that is tied to a parent commit. 
+      2. Branching in Git
+      3. Merging in Git
+      4. Rebase Introduction
     
-      2. Branching in Git. 
+    #### Ramping Up - The next serving of 100% git awesomes-ness. Hope you're hungry
     
+      1. Detach yo' HEAD
+      2. Relative Refs (^)
+      3. Relative Refs #2 (^)
+      4. Reversing Changes in Git
     
+    #### Moving Work Around - "Git" comfortable with modifying the source tree :P
+
     
+      1. Cherry-pick Intro
+
+            Use git cherry-pick if you want to pick one of more commits from another branch and add those to the branch you are currently working on.
+
+            git revert undoes a commit by creating a new commit
+
+            git reset actually alters the commit history. 
+
+            Use git reset on a local repo, use git revert on a public repo
+
+
+      2. Interactive Rebase Intro
+      
+            git rebase -i will let you reorder the sequence of commits
+
+            Done
     
+ 
+    #### A Mixed Bag - A mixed bag of Git techniques, tricks, and tips
     
-    Done
-    #### Ramping Up
-    Done
-    #### Moving Work Around
+      1. Grabbing Just 1 Commit
     
-    Use git cherry-pick if you want to pick one of more commits from another branch and add those to the branch you are currently working on.
-    
-    git revert undoes a commit by creating a new commit
-    
-    git reset actually alters the commit history. 
-    
-    Use git reset on a local repo, use git revert on a public repo
-    
-    git rebase -i will let you reorder the sequence of commits
-    
-    
-    
-    Done
-    
-    #### A Mixed Bag
-    1 - Grabbing Just 1 Commit
-    
-    Let's say you are debugging a problem, you go back and add some print debug statements and print statements. Each one of those has their own commit now. Now you solve the problem and you just want your bugFix commit back into the main branch without bringing along your debug commits. That's the use case for this problem. Two potential solutions are suggested: ```git rebase -i``` or ```git cherry-pick```. 
-    
-    Solution using cherry-pick
-    
-    ```console
-    git checkout main
-    git cherry-pick bugFix
-    ```
-    
-    Solution using git rebase -i 
-    ```console
-    git rebase -i c1 // delete commits c2 and c3
-    git branch -f c4 main'
-    ```
+          Let's say you are debugging a problem, you go back and add some print debug statements and print statements. Each one of those has their own commit now. Now you solve the problem and you just want your bugFix commit back into the main branch without bringing along your debug commits. That's the use case for this problem. Two potential solutions are suggested: ```git rebase -i``` or ```git cherry-pick```. 
+
+          Solution using cherry-pick
+
+          ```console
+          git checkout main
+          git cherry-pick bugFix
+          ```
+
+          Solution using git rebase -i 
+          ```console
+          git rebase -i c1 // delete commits c2 and c3
+          git branch -f c4 main'
+          ```
  
     
-    2 - Juggling Commits
+      2. Juggling Commits
     
-    //We need to change newImage even though that commit is way back in history
+          //We need to change newImage even though that commit is way back in history
+
+          git rebase -i C1 //reorder so the commit we want is on top
+
+          git checkout newImage //get setup to make the change to newImage
+
+          git commit --amend //make the change to newImage
+
+          git checkout caption...
+
+          git rebase -i C1 //reorder back to the original order
+
+          git branch -f main HEAD~3 //move main to this updated part of the tree with the force -f flag
+          
+      3. Juggling Commits #2
     
-    git rebase -i C1 //reorder so the commit we want is on top
-    
-    git checkout newImage //get setup to make the change to newImage
-    
-    git commit --amend //make the change to newImage
-    
-    git checkout caption...
-    
-    git rebase -i C1 //reorder back to the original order
-    
-    git branch -f main HEAD~3 //move main to this updated part of the tree with the force -f flag
-    
-    Done.
-    
-    3 - Juggling Commits #2
-    
-    git cherry-pick will plop down a commit from anywhere in the tree onto HEAD
-    
-    My first attempt solved this in 14 commands. Shortest is 4. Need some practice on this one. 
+            git cherry-pick will plop down a commit from anywhere in the tree onto HEAD
+
+            My first attempt solved this in 14 commands. Shortest is 4. Need some practice on this one. 
  
     
-    4 - Git Tags
-    
-    5 - Git Describe
+      4.  Git Tags
+
+      5.  Git Describe
     
     
      
     In progress.
     
-    
+    #### Advanced Topics - For the Truly Brave!
+    1. Rebasing over 9000 times
+    2. Multiple parents
+    3. Branch spaghetti
     
     
    
