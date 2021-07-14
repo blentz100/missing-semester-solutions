@@ -27,10 +27,87 @@ The motivation behind the course is to teach some of the tools you might be expe
             Git commits are lightweight snapshots of a project you are working on, and switching between them is fast. 
 
             Each time we do a ```git commit``` we create a new snapshot that is tied to a parent commit. 
+
+            Make two commits to complete this level.
+
+            Solution:
+
+            ```
+            git commit
+            git commit
+            ```
+            
     
       2. Branching in Git
-      3. Merging in Git
-      4. Rebase Introduction
+
+            Branches are pointers to commits. "Branch early and branch often." A branch essentially says "I want to include the work of this commit and all parent commits.
+
+         Make a new branch called bugFix and switch to that branch.
+
+         Solution 1:
+
+         ```
+         git branch bugFix
+         git checkout bugFix
+         ```
+
+         Solution 2:
+
+         ```
+         git checkout -b bugFix
+         ```
+
+      4. Merging in Git
+
+         ```git merge``` creates a special commit that has two unique parents. This allows us to combine the work from two branches into one commit. 
+
+         Make a new branch called bugFix
+         
+         Checkout the bugFix branch with git checkout bugFix
+         
+         Commit once
+         
+         Go back to main with git checkout
+         
+         Commit another time
+         
+         Merge the branch bugFix into main with git merge
+         
+         Solution:
+
+         ```
+         git branch bugFix
+         git checkout bugFix
+         git commit
+         git checkout main
+         git commit
+         git merge bugFix
+         ```
+
+      6. Rebase Introduction
+
+         Rebasing is a second way of combining work. It takes a set of commits, copies, and then plops them down somewhere else. The commit log / history of a repo will be alot cleaner if only rebasing is allowed. 
+
+         Checkout a new branch named bugFix
+
+         Commit once
+
+         Go back to main and commit again
+
+         Check out bugFix again and rebase onto main
+
+         Solution:
+
+            ```
+            git branch bugFix
+            git checkout bugFix
+            git commit
+            git checkout main
+            git commit
+            git checkout bugFix
+            git rebase main
+            ```
+
     
     #### Ramping Up - The next serving of 100% git awesomes-ness. Hope you're hungry
     
