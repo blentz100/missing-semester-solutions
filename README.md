@@ -112,6 +112,17 @@ The motivation behind the course is to teach some of the tools you might be expe
     #### Ramping Up - The next serving of 100% git awesomes-ness. Hope you're hungry
     
       1. Detach yo' HEAD
+
+         HEAD is the symbolic name for the currently checked out commit. HEAD always points to the most recent commit which is reflected in the working tree. Normally HEAD points to a branch name, like bugFix. Detaching HEAD just means attaching it to a commit instead of a branch. 
+         
+         To complete this level, let's detach HEAD from bugFix and attach it to the commit instead. Specify this commit by its hash. The hash for each commit is displayed on the circle that represents the commit.
+         
+         Solution:
+         
+         ```
+         
+         ```
+
       2. Relative Refs (^)
       3. Relative Refs #2 (^)
       4. Reversing Changes in Git
