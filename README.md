@@ -113,19 +113,58 @@ The motivation behind the course is to teach some of the tools you might be expe
     
       1. Detach yo' HEAD
 
-         HEAD is the symbolic name for the currently checked out commit. HEAD always points to the most recent commit which is reflected in the working tree. Normally HEAD points to a branch name, like bugFix. Detaching HEAD just means attaching it to a commit instead of a branch. 
+         HEAD is the symbolic name for the currently checked out commit. HEAD (almost) always points to the most recent commit which is reflected in the working tree. Normally HEAD points to a branch name, like bugFix. Detaching HEAD just means attaching it to a commit instead of a branch. 
+
+
+         This 7 minute video has some good supplemental info on HEAD. https://www.youtube.com/watch?v=ZaI1co-rt9I
+         
+         ```git show HEAD``` will show you where the HEAD is currently pointed. Detached HEAD just means HEAD does not currently point to the most recent commit. 
          
          To complete this level, let's detach HEAD from bugFix and attach it to the commit instead. Specify this commit by its hash. The hash for each commit is displayed on the circle that represents the commit.
          
          Solution:
          
          ```
-         
+         git checkout C4
          ```
 
       2. Relative Refs (^)
-      3. Relative Refs #2 (^)
-      4. Reversing Changes in Git
+
+         ```git log``` is what we will use in the real world to see what our commit tree looks like. Relative refs make it easier to move up or down a relative number of times in the commit tree. ```^``` moves up one level in the commit tree and ```~<num>``` moves upwards the number of times specified.
+         
+         
+         To complete this level, check out the parent commit of bugFix. This will detach HEAD.
+
+         You can specify the hash if you want, but try using relative refs instead!
+         
+         Solution 1: (relative ref)
+         
+         ```
+         git checkout bugFix^
+         ```
+         
+         Solution 2: (relative ref)
+         
+         ```
+         git checkout bugFix~1
+         ```
+         
+         Solution 3: (relative ref)
+         
+         ```
+         git checkout C4^
+         ```
+         
+         Solution 4: (direct hash)
+         
+         ```
+         git checkout C3
+         ```
+         
+
+      4. Relative Refs #2 (^)
+     
+      6. Reversing Changes in Git
     
     #### Moving Work Around - "Git" comfortable with modifying the source tree :P
 
