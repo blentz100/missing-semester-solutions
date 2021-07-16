@@ -178,10 +178,26 @@ The motivation behind the course is to teach some of the tools you might be expe
      
       4. Reversing Changes in Git
     
-         There are two primary ways to undo changes in git. ```git revert``` and ```git reset```
+         There are two primary ways to undo changes in git. ```git reset```and ```git revert```
          
          Found a wording issue in this section and ended up submitting a PR for it. https://github.com/pcottle/learnGitBranching/pull/857
          
+         ```git reset``` reverses a change by moving a branch backwards in time as if the commit never happened. Open question - what happens to the commit that got erased? Will it still show up if you run git log? Answer: It does not show up in git log anymore, but it seems to still exist, you can still check it out and it comes back to life.  This method works find if you are just working locally, but not so good if you are collaborating with others using a remote repo. 
+
+         ```git revert``` solves that problem. This allows us to reverse changes and share it with others. 
+         
+         To complete this level, reverse the most recent commit on both local and pushed. You will revert two commits total (one per branch).
+
+         Keep in mind that pushed is a remote branch and local is a local branch -- that should help you choose your methods.
+         
+         Solution:
+         
+         ```
+         git reset HEAD^
+         git checkout pushed
+         git revert pushed
+         ```
+
          
     #### Moving Work Around - "Git" comfortable with modifying the source tree :P
 
