@@ -162,10 +162,27 @@ The motivation behind the course is to teach some of the tools you might be expe
          ```
          
 
-      4. Relative Refs #2 (^)
+      3. Relative Refs #2 (^)
+
+         A common use of relative refs is to move branches around You can directly reassign a branch to a commit with the -f option: ```git branch -f main HEAD~3``` will force the main branch to 3 parents behind the HEAD.
+         
+         To complete this level, move HEAD, main, and bugFix to their goal destinations shown
+         
+         Solution:
+         
+         ```
+         git checkout HEAD^
+         git branch -f main C6
+         git branch -f bugFix HEAD^
+         ```
      
-      6. Reversing Changes in Git
+      4. Reversing Changes in Git
     
+         There are two primary ways to undo changes in git. ```git revert``` and ```git reset```
+         
+         Found a wording issue in this section and ended up submitting a PR for it. https://github.com/pcottle/learnGitBranching/pull/857
+         
+         
     #### Moving Work Around - "Git" comfortable with modifying the source tree :P
 
     
