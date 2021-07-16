@@ -203,14 +203,15 @@ The motivation behind the course is to teach some of the tools you might be expe
 
     
       1. Cherry-pick Intro
+            ```git cherry-pick <commit1> <commit2> <...>``` says you want to grab a series of commits and copy it below your current location (HEAD)
 
-            Use git cherry-pick if you want to pick one of more commits from another branch and add those to the branch you are currently working on.
+            To complete this level, simply copy some work from the three branches shown into main. You can see which commits we want by looking at the goal visualization.
 
-            git revert undoes a commit by creating a new commit
-
-            git reset actually alters the commit history. 
-
-            Use git reset on a local repo, use git revert on a public repo
+           Solution:
+           
+           ```
+           git cherry-pick C3 C4 C7
+           ```
 
 
       2. Interactive Rebase Intro
