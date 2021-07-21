@@ -243,19 +243,40 @@ The motivation behind the course is to teach some of the tools you might be expe
     
       2. Juggling Commits
     
-          //We need to change newImage even though that commit is way back in history
+          Another use case that happens commonly is we need to change a commit way back in our commit history. 
+          
+          The section utilizes ```git commit --amend```. A good explanation of that command is at the [Pro Git Book](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History). This is useful for making a small change to your most recent commit, like modifying the commit message. 
+          
+          Here is the problem: 
 
-          git rebase -i C1 //reorder so the commit we want is on top
+         We will overcome this difficulty by doing the following:
 
-          git checkout newImage //get setup to make the change to newImage
+         We will re-order the commits so the one we want to change is on top with git rebase -i
+         
+         We will git commit --amend to make the slight modification
+         
+         Then we will re-order the commits back to how they were previously with git rebase -i
+         
+         Finally, we will move main to this updated part of the tree to finish the level (via the method of your choosing)
+         
+         There are many ways to accomplish this overall goal (I see you eye-ing cherry-pick), and we will see more of them later, but for now let's focus on this technique. Lastly, pay attention to the goal state here -- since we move the commits twice, they both get an apostrophe appended. One more apostrophe is added for the commit we amend, which gives us the final form of the tree
 
-          git commit --amend //make the change to newImage
+           ```
+          git rebase -i C1 
 
-          git checkout caption...
+          git checkout newImage 
 
-          git rebase -i C1 //reorder back to the original order
+          git commit --amend 
 
-          git branch -f main HEAD~3 //move main to this updated part of the tree with the force -f flag
+          git checkout caption
+
+          git rebase -i C1 
+
+          git branch -f main C3 
+          
+          git checkout main
+          
+          ```
           
       3. Juggling Commits #2
     
