@@ -299,11 +299,33 @@ The motivation behind the course is to teach some of the tools you might be expe
     
       4.  Git Tags
 
+            Branches are useful but they are mutable and often changing. Tags are a way to (almost) permanently mark certain commits as milestones.
+         
+            Solution:
+         
+            ``` console
+            git tag v0 c1
+            git tag v1 c2
+            git checkout v1
+            ```
+
       5.  Git Describe
     
-    
+            ```git describe``` will tell you where you are relative to the closest anchor.
+            
+            Solution:
+
+            ```console
+            git describe
+            git describe HEAD
+            git describe main
+            git describe c5
+            git describe c3
+            git describe side
+            git commit
+            ```
      
-    In progress.
+    
     
     #### Advanced Topics - For the Truly Brave!
     1. Rebasing over 9000 times
