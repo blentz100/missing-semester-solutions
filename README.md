@@ -32,7 +32,7 @@ The motivation behind the course is to teach some of the tools you might be expe
 
             Solution:
 
-            ```
+            ```console
             git commit
             git commit
             ```
@@ -46,14 +46,14 @@ The motivation behind the course is to teach some of the tools you might be expe
 
          Solution 1:
 
-         ```
+         ```console
          git branch bugFix
          git checkout bugFix
          ```
 
          Solution 2:
 
-         ```
+         ```console
          git checkout -b bugFix
          ```
 
@@ -75,7 +75,7 @@ The motivation behind the course is to teach some of the tools you might be expe
          
          Solution:
 
-         ```
+         ```console
          git branch bugFix
          git checkout bugFix
          git commit
@@ -98,7 +98,7 @@ The motivation behind the course is to teach some of the tools you might be expe
 
          Solution:
 
-            ```
+            ```console
             git branch bugFix
             git checkout bugFix
             git commit
@@ -124,7 +124,7 @@ The motivation behind the course is to teach some of the tools you might be expe
          
          Solution:
          
-         ```
+         ```console
          git checkout C4
          ```
 
@@ -139,25 +139,25 @@ The motivation behind the course is to teach some of the tools you might be expe
          
          Solution 1: (relative ref)
          
-         ```
+         ```console
          git checkout bugFix^
          ```
          
          Solution 2: (relative ref)
          
-         ```
+         ```console
          git checkout bugFix~1
          ```
          
          Solution 3: (relative ref)
          
-         ```
+         ```console
          git checkout C4^
          ```
          
          Solution 4: (direct hash)
          
-         ```
+         ```console
          git checkout C3
          ```
          
@@ -170,7 +170,7 @@ The motivation behind the course is to teach some of the tools you might be expe
          
          Solution:
          
-         ```
+         ```console
          git checkout HEAD^
          git branch -f main C6
          git branch -f bugFix HEAD^
@@ -192,7 +192,7 @@ The motivation behind the course is to teach some of the tools you might be expe
          
          Solution:
          
-         ```
+         ```console
          git reset HEAD^
          git checkout pushed
          git revert pushed
@@ -209,7 +209,7 @@ The motivation behind the course is to teach some of the tools you might be expe
 
            Solution:
            
-           ```
+           ```console
            git cherry-pick C3 C4 C7
            ```
 
@@ -261,7 +261,7 @@ The motivation behind the course is to teach some of the tools you might be expe
          
          There are many ways to accomplish this overall goal (I see you eye-ing cherry-pick), and we will see more of them later, but for now let's focus on this technique. Lastly, pay attention to the goal state here -- since we move the commits twice, they both get an apostrophe appended. One more apostrophe is added for the commit we amend, which gives us the final form of the tree
 
-           ```
+           ```console
           git rebase -i C1 
 
           git checkout newImage 
@@ -286,7 +286,7 @@ The motivation behind the course is to teach some of the tools you might be expe
             
             The problem: So in this level, let's accomplish the same objective of amending C2 once but avoid using rebase -i. I'll leave it up to you to figure it out! :D
             
-            ```
+            ```console
             git checkout main
             git cherry-pick c2
             git cherry-pick c3
