@@ -279,10 +279,22 @@ The motivation behind the course is to teach some of the tools you might be expe
           ```
           
       3. Juggling Commits #2
+
+            The reordering done in the prior section can cause rebase conflicts, so we can use git cherry-pick to avoid those. 
     
             git cherry-pick will plop down a commit from anywhere in the tree onto HEAD
+            
+            The problem: So in this level, let's accomplish the same objective of amending C2 once but avoid using rebase -i. I'll leave it up to you to figure it out! :D
+            
+            ```
+            git checkout main
+            git cherry-pick c2
+            git cherry-pick c3
+            ```
+            
+            My solution used 3 commands, their solution used 4 commands. That's a little odd that it worked. It didn't require me to use the git ammend command which I thought I might have to use. 
 
-            My first attempt solved this in 14 commands. Shortest is 4. Need some practice on this one. 
+             
  
     
       4.  Git Tags
