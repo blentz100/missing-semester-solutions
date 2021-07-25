@@ -329,8 +329,28 @@ The motivation behind the course is to teach some of the tools you might be expe
     
     #### Advanced Topics - For the Truly Brave!
     1. Rebasing over 9000 times
-    2. Multiple parents
-    3. Branch spaghetti
+
+         Rebasing Multiple Branches
+         Man, we have a lot of branches going on here! Let's rebase all the work from these branches onto main.
+
+         Upper management is making this a bit trickier though -- they want the commits to all be in sequential order. So this means that our final tree should have C7' at the bottom, C6' above that, and so on, all in order.
+
+         Solution:
+
+         ```console
+         git rebase c6
+         git checkout c3
+         git rebase c2'
+         git checkout c7
+         git rebase c3'
+         git checkout c7'
+         git rebase -i c0
+         git branch -f main c7''
+         ```
+      
+      
+    3. Multiple parents
+    4. Branch spaghetti
     
     
    
