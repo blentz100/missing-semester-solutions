@@ -360,18 +360,20 @@ The motivation behind the course is to teach some of the tools you might be expe
          
          Solution:
          
-         ```
+         ```console
          git branch bugWork main~1^2~1
          ```
          
          Alternate solution but not using the operators taught in this lesson:
          
-         ```
+         ```console
          git branch bugWork C2
          ````
          
          
     5. Branch spaghetti
+
+         
     
     
    
