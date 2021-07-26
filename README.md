@@ -330,7 +330,8 @@ The motivation behind the course is to teach some of the tools you might be expe
     #### Advanced Topics - For the Truly Brave!
     1. Rebasing over 9000 times
 
-         Rebasing Multiple Branches
+         Rebasing 
+         Branches
          Man, we have a lot of branches going on here! Let's rebase all the work from these branches onto main.
 
          Upper management is making this a bit trickier though -- they want the commits to all be in sequential order. So this means that our final tree should have C7' at the bottom, C6' above that, and so on, all in order.
@@ -350,7 +351,27 @@ The motivation behind the course is to teach some of the tools you might be expe
       
       
     3. Multiple parents
-    4. Branch spaghetti
+
+         The ```^``` operator specifies which parent reference to follow from a merge commit.
+         
+         To complete this level, create a new branch at the specified destination.
+
+         Obviously it would be easy to specify the commit directly (with something like C6), but I challenge you to use the modifiers we talked about instead!
+         
+         Solution:
+         
+         ```
+         git branch bugWork main~1^2~1
+         ```
+         
+         Alternate solution but not using the operators taught in this lesson:
+         
+         ```
+         git branch bugWork C2
+         ````
+         
+         
+    5. Branch spaghetti
     
     
    
