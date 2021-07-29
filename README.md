@@ -373,6 +373,24 @@ The motivation behind the course is to teach some of the tools you might be expe
          
     5. Branch spaghetti
 
+         WOAHHHhhh Nelly! We have quite the goal to reach in this level.
+
+         Here we have main that is a few commits ahead of branches one two and three. For whatever reason, we need to update these three other branches with modified versions of the last few commits on main.
+
+         Branch one needs a re-ordering of those commits and an exclusion/drop of C5. Branch two just needs a pure reordering of the commits, and three only needs one commit transferred!
+
+         We will let you figure out how to solve this one -- make sure to check out our solution afterwards with show solution.
+         
+         Solution:
+         
+         Did it in 12 steps, but need to revise it down.
+
+         First did three git commit --amends to create three branches.
+         
+         Then use git cherry-pick to move commits under the right branches. Then git rebase-i to reorder the branches. Then git branch -f to get the branch labels to the right commits. 
+
+
+
          
     
     
