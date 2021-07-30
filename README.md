@@ -389,7 +389,73 @@ The motivation behind the course is to teach some of the tools you might be expe
          
          Then use git cherry-pick to move commits under the right branches. Then git rebase-i to reorder the branches. Then git branch -f to get the branch labels to the right commits. 
 
+      #### Push & Pull -- Git Remotes!
+      
+      1. Clone Intro 
 
+         Git Remotes are a great backup tool and they allow us to easily collaborate with others on projects. It's important to understand the underlying structure of how remotes work. 
+
+         Solution:
+
+         ```console
+         git clone
+         ``` 
+
+      2. Remote Branches
+
+         Git automatically sets the name of your remote to be origin. In this tutorial we will use o as a shorthand for origin.
+         
+         To finish this level, commit once off of main and once after checking out o/main. This will help drive home how remote branches behave differently, and they only update to reflect the state of the remote.
+
+         Solution:
+         
+         ```console
+         git commit
+         git checkout o/main
+         git commit
+         ```
+
+      3. Git Fetchin'
+
+         In this lesson we will learn how to fetch data from a remote repository -- the command for this is conveniently named git fetch.
+
+         git fetch essentially brings our local representation of the remote repository into synchronization with what the actual remote repository looks like (right now).
+
+         git fetch doesn't change anything about your local state, it just downloads the updates. 
+
+         Solution:
+
+         ```console
+         git fetch
+         ```
+
+        
+      4. Git Pullin'
+
+         The workflow of fetching commits from a remote and then merging them is so common there is a single command that does both: ```git pull```
+
+         Solution:
+         
+         ```console
+         git pull
+         ```
+
+      5. Faking Teamwork
+      6. Git Pushin'
+      7. Diverged History
+      8. Locked Main
+      
+      
+      #### To Origin and Beyond -- Advanced Git Remotes!
+      
+      1. Push Main!
+      2. Merging with Remotes
+      3. Remote Tracking
+      4. Git Push Arguments
+      5. Git Push Arguments - Expaned
+      6. Fetch Arguments
+      7. Source of Nothing
+      8. Pull Arguments
 
          
     
