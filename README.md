@@ -441,7 +441,29 @@ The motivation behind the course is to teach some of the tools you might be expe
          ```
 
       5. Faking Teamwork
+
+         Go ahead and make a remote (with git clone), fake some changes on that remote, commit yourself, and then pull down those changes. It's like a few lessons in one!
+
+         Solution:
+
+         ```console
+         git clone
+         git fakeTeamwork 2
+         git commit
+         git pull
+         ```
       6. Git Pushin'
+
+         git push is the opposite of git pull. It allows you to get your code onto the remote to share with the rest of the team. The default behavior of git push with no arguments depents on the settings called push.default.
+
+         Solution:
+         ```console
+         git commit
+         git push
+         git push
+         ```
+
+
       7. Diverged History
       8. Locked Main
       
