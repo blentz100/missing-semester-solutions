@@ -465,6 +465,41 @@ The motivation behind the course is to teach some of the tools you might be expe
 
 
       7. Diverged History
+
+         The big challenge with pulling and pushing comes when we have a diverged history, meaning someone else contributed some code to a remote that conflicts with code you are working on. In this case, git won't allow you to git push your code if it conflicts with something that someone else wrote. To resolve this, you must base your work off the most recent version of the remote branch. One solution is to do a ```git rebase``` before pushing. You can also do the same thing with a ```git merge``` command instead of ```git rebase```. Or an even faster way is via ```git pull --rebase```. 
+
+         In order to solve this level, take the following steps:
+
+         Clone your repo
+
+         Fake some teamwork (1 commit)
+
+         Commit some work yourself (1 commit)
+
+         Publish your work via rebasing
+
+         Solution 1:
+
+         ```console
+         git clone
+         git fakeTeamwork 1
+         git commit
+         git pull --rebase
+         git push
+         ```
+         
+         Solution 2:
+
+         ```console
+         git clone
+         git fakeTeamwork 1
+         git commit
+         git fetch
+         git rebase o/main
+         git push
+         ```
+
+
       8. Locked Main
       
       
