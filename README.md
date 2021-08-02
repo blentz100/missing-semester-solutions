@@ -454,7 +454,7 @@ The motivation behind the course is to teach some of the tools you might be expe
          ```
       6. Git Pushin'
 
-         git push is the opposite of git pull. It allows you to get your code onto the remote to share with the rest of the team. The default behavior of git push with no arguments depents on the settings called push.default.
+         git push is the opposite of git pull. It allows you to get your code onto the remote to share with the rest of the team. The default behavior of git push with no arguments depends on the settings called push.default.
 
          Solution:
          ```console
@@ -501,6 +501,17 @@ The motivation behind the course is to teach some of the tools you might be expe
 
 
       8. Locked Main
+
+         If you work on a large team, you generally can't push directly onto the main branch. The solution is to create your own branch locally, make your changes, then push that change to the remote using a pull request. 
+
+         Solution:
+
+         ```console
+         git branch feature
+         git checkout feature
+         git branch -f main c1
+         git push 
+         ```
       
       
       #### To Origin and Beyond -- Advanced Git Remotes!
