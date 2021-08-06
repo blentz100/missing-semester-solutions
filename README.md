@@ -24,7 +24,7 @@ The motivation behind the course is to teach some of the tools you might be expe
    <details><summary><b>Solution</b></summary>
    <p> 
 
-   This solution got so long I created it's own repository: [Learn Git Branching Solultions and Notes](https://github.com/blentz100/Learn-Git-Branching-Solutions-and-Notes/edit/main/README.md)
+   This solution got so long I created it's own repository: [Learn Git Branching Solultions and Notes](https://github.com/blentz100/Learn-Git-Branching-Solutions-and-Notes)
 
    </p>
    </details>
