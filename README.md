@@ -33,6 +33,15 @@ The motivation behind the course is to teach some of the tools you might be expe
 1. Clone the [repository for the
 class website](https://github.com/missing-semester/missing-semester).
     1. Explore the version history by visualizing it as a graph.
+       <details><summary><b>Solution</b></summary>
+       <p> 
+
+       ```git log --all --graph --decorate```
+          
+       
+
+       </p>
+       </details>
     1. Who was the last person to modify `README.md`? (Hint: use `git log` with
        an argument).
     1. What was the commit message associated with the last modification to the
