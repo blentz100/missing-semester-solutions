@@ -21,7 +21,7 @@ The motivation behind the course is to teach some of the tools you might be expe
    tutorial like <a href="https://learngitbranching.js.org/" target="_blank">Learn Git Branching</a>. As
    you're working through it, relate Git commands to the data model.
 
-   <details><summary><b>Solution</b></summary>
+   <details open><summary><b>Solution</b></summary>
    <p> 
 
    This solution got so long I created it's own repository: [Learn Git Branching Solultions and Notes](https://github.com/blentz100/Learn-Git-Branching-Solutions-and-Notes)
@@ -33,7 +33,7 @@ The motivation behind the course is to teach some of the tools you might be expe
 1. Clone the [repository for the
 class website](https://github.com/missing-semester/missing-semester).
     1. Explore the version history by visualizing it as a graph.
-       <details><summary><b>Solution</b></summary>
+       <details open><summary><b>Solution</b></summary>
        <p> 
 
        ```git log --all --graph --decorate```
