@@ -37,8 +37,9 @@ class website](https://github.com/missing-semester/missing-semester).
        <p> 
 
        ```git log --all --graph --decorate```
+         
+       ![git log output](https://github.com/blentz100/missing-semester-solutions/blob/main/images/gitlogoutput.png?raw=true)
           
-       
 
        </p>
        </details>
