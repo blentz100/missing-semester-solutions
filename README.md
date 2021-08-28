@@ -46,6 +46,25 @@ class website](https://github.com/missing-semester/missing-semester).
        </details>
     1. Who was the last person to modify `README.md`? (Hint: use `git log` with
        an argument).
+       
+       <details open><summary><b>Solution</b></summary>
+       <p> 
+       
+       Anish Athalye
+       
+       ```git log -n 1 README.md```
+       
+        <img src="https://github.com/blentz100/missing-semester-solutions/blob/main/images/gitlogoutput.png?raw=true" alt="drawing" width="600"/>
+       
+
+       `git log --all --graph --decorate`
+         
+        <img src="https://github.com/blentz100/missing-semester-solutions/blob/main/images/gitlogoutput.png?raw=true" alt="drawing" width="600"/>
+        
+        I was wondering what the different colors mean in the output and found this answer on Stackoverflow: [What do the line colors in git log --graph mean?](https://stackoverflow.com/questions/40675151/what-do-line-colors-in-git-log-graph-mean) (tldr: nothing important)
+
+       </p>
+       </details>
     1. What was the commit message associated with the last modification to the
        `collections:` line of `_config.yml`? (Hint: use `git blame` and `git
        show`)
