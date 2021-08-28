@@ -62,6 +62,19 @@ class website](https://github.com/missing-semester/missing-semester).
     1. What was the commit message associated with the last modification to the
        `collections:` line of `_config.yml`? (Hint: use `git blame` and `git
        show`)
+       
+       <details open><summary><b>Solution</b></summary>
+       <p> 
+       
+       Commit message: Redo lectures as a collection
+       
+       `git blame _config.yml`
+       
+       `git show a884beac`
+      
+       </p>
+       </details>
+       
 
 
 1. One common mistake when learning Git is to commit large files that should
