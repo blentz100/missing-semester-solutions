@@ -54,14 +54,8 @@ class website](https://github.com/missing-semester/missing-semester).
        
        ```git log -n 1 README.md```
        
-        <img src="https://github.com/blentz100/missing-semester-solutions/blob/main/images/gitlogoutput.png?raw=true" alt="drawing" width="600"/>
+        <img src="https://github.com/blentz100/missing-semester-solutions/blob/main/images/Solution_2.2.png?raw=true" alt="drawing" width="600"/>
        
-
-       `git log --all --graph --decorate`
-         
-        <img src="https://github.com/blentz100/missing-semester-solutions/blob/main/images/gitlogoutput.png?raw=true" alt="drawing" width="600"/>
-        
-        I was wondering what the different colors mean in the output and found this answer on Stackoverflow: [What do the line colors in git log --graph mean?](https://stackoverflow.com/questions/40675151/what-do-line-colors-in-git-log-graph-mean) (tldr: nothing important)
 
        </p>
        </details>
