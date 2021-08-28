@@ -73,11 +73,12 @@ class website](https://github.com/missing-semester/missing-semester).
    website](https://github.com/missing-semester/missing-semester), find a typo
    or some other improvement you can make, and submit a pull request on GitHub.
 
-   <details><summary><b>Solution</b></summary>
+   <details open><summary><b>Solution</b></summary>
    <p> 
 
    [PR #141](https://github.com/missing-semester/missing-semester/pull/141)
-
+      
+   <img src="https://github.com/blentz100/missing-semester-solutions/blob/main/images/pr_screenshot.png?raw=true" alt="drawing" width="600"/>
    </p>
    </details>
 
