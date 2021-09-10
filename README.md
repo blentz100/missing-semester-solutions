@@ -72,8 +72,8 @@ class website](https://github.com/missing-semester/missing-semester).
        
        `git show a884beac`
       
-       </p>
-       </details>
+      </p>
+      </details>
        
 
 
@@ -82,6 +82,106 @@ class website](https://github.com/missing-semester/missing-semester).
    a repository, making some commits and then deleting that file from history
    (you may want to look at
    [this](https://help.github.com/articles/removing-sensitive-data-from-a-repository/)).
+   
+   <details open><summary><b>Solution</b></summary>
+       <p> 
+       
+          Successfully installed bfg cleaner using homebrew installation.
+          
+          Ran the tool and it defintely changed the commit id's that referenced the most recent test commits I did. In order to see the file actually gone from the directory listing, I had to checkout an earlier commit. BFG's default behavior seems to be to leave the latest commit in place. See their documenation for more details. So according to my testing this worked as designed. Output:
+
+          ```console
+          ➜  missing-semester git:(master) ✗ bfg --delete-files delete_me.txt
+
+
+            Using repo : /Users/brendanlentz/missing-semester/.git
+
+            Found 77 objects to protect
+            Found 6 commit-pointing refs : HEAD, refs/heads/master, refs/remotes/origin/HEAD, ...
+
+            Protected commits
+            -----------------
+
+            These are your protected commits, and so their contents will NOT be altered:
+
+             * commit 45ce763c (protected by 'HEAD') - contains 1 dirty file :
+                    - delete_me.txt (786 B )
+
+            WARNING: The dirty content above may be removed from other commits, but as
+            the *protected* commits still use it, it will STILL exist in your repository.
+
+            Details of protected dirty content have been recorded here :
+
+            /Users/brendanlentz/missing-semester.bfg-report/2021-09-10/08-32-49/protected-dirt/
+
+            If you *really* want this content gone, make a manual commit that removes it,
+            and then run the BFG on a fresh copy of your repo.
+
+
+            Cleaning
+            --------
+
+            Found 510 commits
+            Cleaning commits:       100% (510/510)
+            Cleaning commits completed in 562 ms.
+
+            Updating 2 Refs
+            ---------------
+
+                    Ref                          Before     After
+                    ------------------------------------------------
+                    refs/heads/master          | 45ce763c | df3f4027
+                    refs/remotes/origin/master | 45ce763c | df3f4027
+
+            Updating references:    100% (2/2)
+            ...Ref update completed in 47 ms.
+
+            Commit Tree-Dirt History
+            ------------------------
+
+                    Earliest                                              Latest
+                    |                                                          |
+                    ...........................................................D
+
+                    D = dirty commits (file tree fixed)
+                    m = modified commits (commit message or parents changed)
+                    . = clean commits (no changes to file tree)
+
+                                            Before     After
+                    -------------------------------------------
+                    First modified commit | ef485e99 | 96b3b09f
+                    Last dirty commit     | febb6eec | 6e9c0f46
+
+            Deleted files
+            -------------
+
+                    Filename        Git id
+                    ----------------------------------------------------
+                    delete_me.txt | c247dd3a (606 B ), 8c3e0171 (182 B )
+
+
+            In total, 5 object ids were changed. Full details are logged here:
+
+                    /Users/brendanlentz/missing-semester.bfg-report/2021-09-10/08-32-49
+
+            BFG run is complete! When ready, run: git reflog expire --expire=now --all && git gc --prune=now --aggressive
+
+
+            ➜  missing-semester git:(master) ✗ git reflog expire --expire=now --all && git gc --prune=now --aggressive
+            Enumerating objects: 1947, done.
+            Counting objects: 100% (1947/1947), done.
+            Delta compression using up to 4 threads
+            Compressing objects: 100% (1904/1904), done.
+            Writing objects: 100% (1947/1947), done.
+            Total 1947 (delta 1181), reused 714 (delta 0), pack-reused 0
+            ➜  missing-semester git:(master) ✗
+
+            ➜  missing-semester git:(96b3b09) ✗
+            ```
+          
+      
+   </p>
+   </details>
 
 1. Clone some repository from GitHub, and modify one of its existing files.
    What happens when you do `git stash`? What do you see when running `git log
