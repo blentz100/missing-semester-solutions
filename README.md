@@ -192,42 +192,74 @@ class website](https://github.com/missing-semester/missing-semester).
    What happens when you do `git stash`? What do you see when running `git log
    --all --oneline`? Run `git stash pop` to undo what you did with `git stash`.
    In what scenario might this be useful?
-   
+
       <details open><summary><b>Solution</b></summary>
       <p> 
-       
+
+      If you want to temporarily hide the current changes you've made since your
+      last commit, you can use git stash. This is helpful if you need to switch
+      context and work on something else, but you are not yet 100% done with the
+      thing you are working on at the moment. More useful info at [Git
+      SCM](https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning). I
+      added a few extra git log commands below to more clearly see the before
+      and after effects of the git stash command. Also I added the -n 8 option
+      to limit out the output and redirected it to cat so I could easily cut and
+      paste the output as a group. 
+
       ```console
-      ➜  test git clone https://github.com/tomnomnom/gron
-      Cloning into 'gron'...
-      remote: Enumerating objects: 774, done.
-      remote: Counting objects: 100% (7/7), done.
-      remote: Compressing objects: 100% (6/6), done.
-      remote: Total 774 (delta 1), reused 4 (delta 1), pack-reused 767
-      Receiving objects: 100% (774/774), 1.45 MiB | 2.00 MiB/s, done.
-      ➜  gron git:(master) echo changingREADMEfilebyappendingthislongweirdstringtoit >> README.mkd
-      ➜  gron git:(master) ✗ git stash
-      Saved working directory and index state WIP on master: 6d4fe18 Removes older go version from .travis.yml
-      ➜  gron git:(master) git log --all --oneline   
-      e939829 (refs/stash) WIP on master: 6d4fe18 Removes older go version from .travis.yml
-      562f601 index on master: 6d4fe18 Removes older go version from .travis.yml
-      6d4fe18 (HEAD -> master, tag: v0.6.1, origin/master, origin/HEAD) Removes older go version from .t
-      ravis.yml
-      7e958f8 Merge pull request #78 from alblue/master
-      ...
-     ➜  gron git:(master) git stash pop
-      On branch master
-      Your branch is up to date with 'origin/master'.
+   ➜  test git clone https://github.com/tomnomnom/gron
+   Cloning into 'gron'...
+   remote: Enumerating objects: 774, done.
+   remote: Counting objects: 100% (7/7), done.
+   remote: Compressing objects: 100% (6/6), done.
+   remote: Total 774 (delta 1), reused 4 (delta 1), pack-reused 767
+   Receiving objects: 100% (774/774), 1.45 MiB | 1.67 MiB/s, done.
+   Resolving deltas: 100% (445/445), done.
+   ➜  test cd gron
+   ➜  gron git:(master) echo "let's run the git log command before we do the changes so we can see the before and compare"
+   let's run the git log command before we do the changes so we can see the before and compare
+   ➜  gron git:(master) git log --all --oneline -n 8 | cat
+   6d4fe18 Removes older go version from .travis.yml
+   7e958f8 Merge pull request #78 from alblue/master
+   33df164 Allow running as ungron to perform --ungron automatically
+   602235e Merge pull request #59 from akavel/go-mod
+   16b87ec Merge pull request #58 from akavel/master
+   07465cf Merge pull request #49 from saka1/long-ungron
+   57a0165 add go.mod & go.sum for go modules support
+   d34e996 simplify quoteString
+   ➜  gron git:(master) echo changingREADMEfilebyappendingthislongweirdstringtoit >> README.mkd
+   ➜  gron git:(master) ✗ git stash
+   Saved working directory and index state WIP on master: 6d4fe18 Removes older go version from .travis.yml
+   ➜  gron git:(master) git log --all --oneline -n 8 | cat
+   194d432 WIP on master: 6d4fe18 Removes older go version from .travis.yml
+   1ee31b8 index on master: 6d4fe18 Removes older go version from .travis.yml
+   6d4fe18 Removes older go version from .travis.yml
+   7e958f8 Merge pull request #78 from alblue/master
+   33df164 Allow running as ungron to perform --ungron automatically
+   602235e Merge pull request #59 from akavel/go-mod
+   16b87ec Merge pull request #58 from akavel/master
+   07465cf Merge pull request #49 from saka1/long-ungron
+   ➜  gron git:(master) git stash pop
+   On branch master
+   Your branch is up to date with 'origin/master'.
 
-      Changes not staged for commit:
-        (use "git add <file>..." to update what will be committed)
-        (use "git restore <file>..." to discard changes in working directory)
-              modified:   README.mkd
+   Changes not staged for commit:
+     (use "git add <file>..." to update what will be committed)
+     (use "git restore <file>..." to discard changes in working directory)
+           modified:   README.mkd
 
-      no changes added to commit (use "git add" and/or "git commit -a")
-      Dropped refs/stash@{0} (77752cbd47999c92cc164057e23a9beff7fc54a2)
- 
-
-
+   no changes added to commit (use "git add" and/or "git commit -a")
+   Dropped refs/stash@{0} (194d4327d4b487e3877dfe5c2f4230028a9a5d30)
+   ➜  gron git:(master) ✗ git log --all --oneline -n 8 | cat
+   6d4fe18 Removes older go version from .travis.yml
+   7e958f8 Merge pull request #78 from alblue/master
+   33df164 Allow running as ungron to perform --ungron automatically
+   602235e Merge pull request #59 from akavel/go-mod
+   16b87ec Merge pull request #58 from akavel/master
+   07465cf Merge pull request #49 from saka1/long-ungron
+   57a0165 add go.mod & go.sum for go modules support
+   d34e996 simplify quoteString
+   ➜  gron git:(master) ✗
       ```
        
        
