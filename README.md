@@ -86,11 +86,16 @@ class website](https://github.com/missing-semester/missing-semester).
    <details open><summary><b>Solution</b></summary>
        <p> 
        
-          Successfully installed bfg cleaner using homebrew installation.
+      Successfully installed bfg cleaner using homebrew installation.
           
-          Ran the tool and it defintely changed the commit id's that referenced the most recent test commits I did. In order to see the file actually gone from the directory listing, I had to checkout an earlier commit. BFG's default behavior seems to be to leave the latest commit in place. See their documenation for more details. So according to my testing this worked as designed. Output:
+      Ran the tool and it defintely changed the commit id's that referenced the
+      most recent test commits I did. In order to see the file actually gone
+      from the directory listing, I had to checkout an earlier commit. BFG's
+      default behavior seems to be to leave the latest commit in place. See
+      their documenation for more details. So according to my testing this
+      worked as designed. Output:
 
-          ```console
+      ```console
           ➜  missing-semester git:(master) ✗ bfg --delete-files delete_me.txt
 
 
@@ -177,7 +182,7 @@ class website](https://github.com/missing-semester/missing-semester).
             ➜  missing-semester git:(master) ✗
 
             ➜  missing-semester git:(96b3b09) ✗
-            ```
+      ```
           
       
    </p>
@@ -187,6 +192,51 @@ class website](https://github.com/missing-semester/missing-semester).
    What happens when you do `git stash`? What do you see when running `git log
    --all --oneline`? Run `git stash pop` to undo what you did with `git stash`.
    In what scenario might this be useful?
+   
+      <details open><summary><b>Solution</b></summary>
+      <p> 
+       
+      ```console
+      ➜  test git clone https://github.com/tomnomnom/gron
+      Cloning into 'gron'...
+      remote: Enumerating objects: 774, done.
+      remote: Counting objects: 100% (7/7), done.
+      remote: Compressing objects: 100% (6/6), done.
+      remote: Total 774 (delta 1), reused 4 (delta 1), pack-reused 767
+      Receiving objects: 100% (774/774), 1.45 MiB | 2.00 MiB/s, done.
+      ➜  gron git:(master) echo changingREADMEfilebyappendingthislongweirdstringtoit >> README.mkd
+      ➜  gron git:(master) ✗ git stash
+      Saved working directory and index state WIP on master: 6d4fe18 Removes older go version from .travis.yml
+      ➜  gron git:(master) git log --all --oneline   
+      e939829 (refs/stash) WIP on master: 6d4fe18 Removes older go version from .travis.yml
+      562f601 index on master: 6d4fe18 Removes older go version from .travis.yml
+      6d4fe18 (HEAD -> master, tag: v0.6.1, origin/master, origin/HEAD) Removes older go version from .t
+      ravis.yml
+      7e958f8 Merge pull request #78 from alblue/master
+      ...
+     ➜  gron git:(master) git stash pop
+      On branch master
+      Your branch is up to date with 'origin/master'.
+
+      Changes not staged for commit:
+        (use "git add <file>..." to update what will be committed)
+        (use "git restore <file>..." to discard changes in working directory)
+              modified:   README.mkd
+
+      no changes added to commit (use "git add" and/or "git commit -a")
+      Dropped refs/stash@{0} (77752cbd47999c92cc164057e23a9beff7fc54a2)
+ 
+
+
+      ```
+       
+       
+
+      </p>
+      </details>
+
+
+
 1. Like many command line tools, Git provides a configuration file (or dotfile)
    called `~/.gitconfig`. Create an alias in `~/.gitconfig` so that when you
    run `git graph`, you get the output of `git log --all --graph --decorate
