@@ -283,6 +283,21 @@ class website](https://github.com/missing-semester/missing-semester).
    `git config --global core.excludesfile ~/.gitignore_global`. Do this, and
    set up your global gitignore file to ignore OS-specific or editor-specific
    temporary files, like `.DS_Store`.
+
+
+   <details open><summary><b>Solution</b></summary>
+   <p> 
+      
+      ```console
+      .DS_Store
+      *.exe
+      node_modules
+      ```
+      
+   </p>
+   </details>
+
+
 1. Fork the [repository for the class
    website](https://github.com/missing-semester/missing-semester), find a typo
    or some other improvement you can make, and submit a pull request on GitHub.
